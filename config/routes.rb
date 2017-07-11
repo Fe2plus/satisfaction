@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
 
-  get 'answers/index'
-  get 'answers/new'
 
+  get 'users/new'
+
+  resources :answers
   resources :users
 
 end
