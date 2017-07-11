@@ -1,1 +1,13 @@
   <%= link_to "Sign up now!", new_user_path, class: "btn btn-lg btn-primary"%>
+  <br />
+
+<thead>
+  <th>Email</th>
+</thead>
+<tbody>
+  <tr>
+    <% @users.each do |user| %>
+    <td><%= user.email %><br /></td>
+    <% end %>
+  </tr>
+</tbody>
