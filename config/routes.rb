@@ -6,4 +6,6 @@ Rails.application.routes.draw do
   resources :answers
   resources :users
 
+  root :to => 'answers#index'
+
 end
