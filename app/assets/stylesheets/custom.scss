@@ -26,8 +26,12 @@ header{
 
 /* header*/
 
+.menu{
+  margin: 5px;
+}/*自分で作成？微妙かと*/
+
 #logo {
-  float: left;
+  /*float: left; タイトルロゴをセンターラインへ移動したいため、コメントアウト*/
   margin-right: 10px;
   font-size: 1.7em;
   color: #fff;
@@ -35,6 +39,15 @@ header{
   padding-top: 9px;
   font-weight: bold;
 }
+
+/*index*/
+body{
+  .container{
+    .row{
+      margin-top: 50px;
+    }
+  }
+}/*よく分からず。グリッドの概念が分かっていないのか？*/
 
 /* forms */
 
