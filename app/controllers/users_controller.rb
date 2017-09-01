@@ -13,7 +13,7 @@ class UsersController < ApplicationController
     if @user.save
       log_in @user
       flash[:success] = "Welcome to the Sample App!"
-      redirect_to @user
+      redirect_to :root, notice: "finished signing up!!" #登録完了後に登録しました！的なアクションが欲しい
     else
       render 'new'
     end

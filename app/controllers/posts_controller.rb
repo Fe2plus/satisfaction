@@ -11,7 +11,8 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     if @post.save
-      redirect_to @post
+      redirect_to :root
+      flash[:success] = "Thank you!!"
     else
       render 'new'
     end
