@@ -19,3 +19,6 @@
 
 # Ignore Byebug command history file.
 .byebug_history
+
+# アカウントの画像を保存しない
+/public/system/profiles/user_images
