@@ -13,6 +13,11 @@
         <%= f.label :password_confirmation, "Confirmation" %>
         <%= f.password_field :password_confirmation %>
 
+        <%= f.fields_for :profile do |profile_form| %>
+        <%= profile_form.label :user_image %>
+        <%= profile_form.file_field :user_image %>
+        <% end %>
+
         <%= f.submit "Create my account", class: "btn btn-primary" %>
     <% end %>
   </div>

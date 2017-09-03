@@ -1,1 +1,9 @@
 <%= @user.email %>
+
+<!-- 追加箇所 開始-->
+<p>
+   <strong>Picture:</strong>
+   <!--- Modelのstyleで指定した :midium など渡すことでサイズを指定できる -->
+   <%= image_tag @user.profile.user_image.url(:medium) %>
+</p>
+<!-- 追加箇所 終了-->

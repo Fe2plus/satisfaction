@@ -10,13 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170901070933) do
+ActiveRecord::Schema.define(version: 20170903022347) do
 
   create_table "posts", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "name"
-    t.string   "title"
-    t.text     "body"
+    t.string   "title",      null: false
+    t.text     "body",       null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -25,8 +25,12 @@ ActiveRecord::Schema.define(version: 20170901070933) do
     t.integer  "user_id"
     t.string   "name"
     t.text     "introduction"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+    t.string   "user_image_file_name"
+    t.string   "user_image_content_type"
+    t.integer  "user_image_file_size"
+    t.datetime "user_image_updated_at"
   end
 
   create_table "replies", force: :cascade do |t|

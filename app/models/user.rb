@@ -4,6 +4,7 @@ class User < ApplicationRecord
   has_one :profile
   has_many :posts
   has_many :replies
+  accepts_nested_attributes_for :profile
 
   # 渡された文字列のハッシュ値を返す
   def User.digest(string)
