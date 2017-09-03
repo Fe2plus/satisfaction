@@ -1,5 +1,5 @@
 class Profile < ApplicationRecord
-  belongs_to :user
+  belongs_to :user, optional: true
 
   # photoをattachファイルとする。stylesで画像サイズを定義できる
   has_attached_file :user_image, styles: { medium: "300x300>", thumb: "100x100>" }
