@@ -11,7 +11,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    #@user.build_profile(user_image: user_params[:user_image])
+    #@user.build_profile(user_image: user_params[:user_image]) 何故いらないのか？
     if @user.save
       log_in @user
       flash[:success] = "Welcome to the Sample App!"
