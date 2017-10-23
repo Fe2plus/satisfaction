@@ -12,14 +12,22 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     #@user.build_profile(user_image: user_params[:user_image]) 何故いらないのか？
-    if @user.save
+
+   begin
+    success = @user.save
+   rescue
+     render 'new'
+     return
+   end
+
+    if success
       log_in @user
       flash[:success] = "Welcome to the Sample App!"
       redirect_to :root, notice: "finished signing up!!" #登録完了後に登録しました！的なアクションが欲しい
     else
       render 'new'
     end
-  end
+    end
 
   private
   def user_params

@@ -49,6 +49,37 @@ body{
   }
 }/*よく分からず。グリッドの概念が分かっていないのか？*/
 
+#list-body{
+  margin:20px 250px;
+}
+
+ul{
+  padding: 0;
+  margin: 0;
+}
+
+.list {
+  border-top: 1px solid #dedede;
+  li{
+    padding: 10px 0;
+    font-size: 15px;
+    font-size: 1.5rem;
+    list-style-type: none;
+    display: inline-block;
+  }
+  #name{
+    font-weight: bold;
+    font-size: 16px;
+  }
+  #post-body{
+    font-size: 15px;
+    margin: 5px 5px;
+  }
+  #replybtn{
+    margin-bottom:30px;
+  }
+}
+
 /* forms */
 
 input, textarea, select, .uneditable-input {

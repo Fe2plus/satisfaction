@@ -9,7 +9,12 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(post_params)
+    @user = current_user
+    @post = @user.posts.build(post_params)
+    @post.name  = @user.profile.name
+    if @post.name.nil?
+      @post.name = "anonymous"
+    end
     if @post.save
       redirect_to :root
       flash[:success] = "Thank you!!"
