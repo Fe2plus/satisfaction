@@ -1,6 +1,16 @@
-<h1>Post</h1>
-<div class="row">
-  <%= @post.name %>
-  <%= @post.title %>
-  <%= @post.body %>
+<div class="row col-md-7 col-md-offset-2" id="showpost">
+  <ul class="list">
+    <li id="showname" class="col-md-1"><%= @post.name %></li>
+    <li id="showimage" class="col-md-offset-2"> <%= image_tag current_user.profile.user_image.url(:thumb) %></li>
+    <li id="showbody" class="col-md-12"><%= @post.body %></li>
+    <li class="col-md-offset-10"><%= link_to "Reply!!", new_reply_path,class: "btn btn-lg btn-primary block"%></li>
+  </ul>
+</div>
+
+<div class="row col-md-7 col-md-offset-2">
+  <ul>
+    <li  class="col-md-1"><%= @post.name %></li>
+    <li class="col-md-offset-2"> <%= image_tag current_user.profile.user_image.url(:thumb) %></li>
+    <li class="col-md-12"><%= @replies.body %></li><!--ここが起動できない -->
+  </ul>
 </div>
