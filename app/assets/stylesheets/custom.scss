@@ -107,19 +107,22 @@ input {
 }
 
 /* shows */
-#showpost{
+.showpost{
   border: 1px solid #bbb;
 }
 
-#showname{
+.showname{
   font-weight: bold;
   font-size: 16px;
 }
 
-#showimage{
+.showimage{
 
 }
 
-#showbody{
+.showbody{
 
+}
+.replypost{
+  padding-top:25px;
 }

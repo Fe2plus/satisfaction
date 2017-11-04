@@ -2,7 +2,9 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
-    @replies = Post.find(params[:id]).replies
+    @replies = @post.replies
+    @reply  = Reply.new
+    @reply.post_id  =  @post.id
   end
 
   def new

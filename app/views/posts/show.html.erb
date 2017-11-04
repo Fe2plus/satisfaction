@@ -1,16 +1,29 @@
-<div class="row col-md-7 col-md-offset-2" id="showpost">
+<div class="row col-md-7 col-md-offset-2 showpost">
   <ul class="list">
-    <li id="showname" class="col-md-1"><%= @post.name %></li>
-    <li id="showimage" class="col-md-offset-2"> <%= image_tag current_user.profile.user_image.url(:thumb) %></li>
-    <li id="showbody" class="col-md-12"><%= @post.body %></li>
-    <li class="col-md-offset-10"><%= link_to "Reply!!", new_reply_path,class: "btn btn-lg btn-primary block"%></li>
+    <li class="col-md-1 showname"><%= @post.name %></li>
+    <li class="col-md-offset-2 showimage"> <%= image_tag current_user.profile.user_image.url(:thumb) %></li>
+    <li class="col-md-12 showbody"><%= @post.body %></li>
   </ul>
 </div>
 
 <div class="row col-md-7 col-md-offset-2">
-  <ul>
-    <li  class="col-md-1"><%= @post.name %></li>
-    <li class="col-md-offset-2"> <%= image_tag current_user.profile.user_image.url(:thumb) %></li>
-    <li class="col-md-12"><%= @replies.body %></li><!--ここが起動できない -->
+  <% @replies.each do |reply| %>
+  <ul class="list showpost">
+    <li class="showname" ><%= reply.name %></li>
+    <li class="showimage"><%= image_tag reply.user.profile.user_image.url(:thumb) %></li>
+    <li class="showbody"><%= reply.body %></li>
   </ul>
+  <% end%>
+</div>
+
+<div class="row">
+  <div class="col-md-5 col-md-offset-3 replypost">
+    <%= form_for(@reply) do |f| %>
+
+        <%= f.label :body %>
+        <%= f.text_area :body, :size => "20x10" %>
+        <%= f.hidden_field :post_id, value: @reply.post_id%>
+        <%= f.submit "Create my reply", class: "btn btn-primary" %>
+    <% end %>
+  </div>
 </div>
